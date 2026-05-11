@@ -1,18 +1,1 @@
-{
-  "name": "product-manager-marketplace",
-  "owner": "NicZhang",
-  "metadata": {
-    "description": "Product Manager Skill marketplace"
-  },
-  "plugins": [
-    {
-      "name": "product-manager-skill",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/NicZhang/product-manager-skill.git"
-      },
-      "description": "资深产品经理 skill，通过结构化对话引导梳理产品需求，输出标准PRD文档",
-      "version": "1.0.0"
-    }
-  ]
-}
+{"name":"product-manager-marketplace","owner":{"name":"NicZhang","email":"nic@example.com"},"metadata":{"description":"Product Manager Skill - 通过结构化对话引导梳理产品需求，输出标准PRD文档","version":"1.0.0"},"plugins":[{"name":"product-manager-skill","source":{"source":"url","url":"https://github.com/NicZhang/product-manager-skill.git"},"description":"资深产品经理 skill，通过结构化对话引导一线业务人员梳理产品需求，输出标准PRD文档","version":"1.0.0"}]}
