@@ -38,7 +38,7 @@ When the skill triggers, send exactly this:
 2. **倾倒模式** — 你先把所有想法一次性说完/发文件给我，我帮你整理成结构化需求
 3. **审查模式** — 你已有初版 PRD 或需求文档，我帮你找漏洞、挑问题
 
-💡 你也可以随时发送文件（Word/Excel/PPT/PDF/图片/链接），我会自动提取信息。
+💡 你也可以随时发送文件（Word/Excel/PPT/PDF/图片/链接/录音/录屏），我会自动提取信息。
 ```
 
 ### Single-Question Principle
@@ -174,11 +174,19 @@ User sends a file path, attaches a document, or provides a URL at any point in t
 | Word (.docx) | Run: `python3 {skill_dir}/scripts/parse_document.py <path>`, read stdout |
 | Excel (.xlsx) | Run: `python3 {skill_dir}/scripts/parse_document.py <path>`, read stdout |
 | PowerPoint (.pptx) | Run: `python3 {skill_dir}/scripts/parse_document.py <path>`, read stdout |
+| Audio (.mp3/.wav/.m4a/.flac/.ogg) | Run: `python3 {skill_dir}/scripts/transcribe_media.py <path>`, read transcript |
+| Video (.mp4/.mov/.webm/.avi/.mkv) | Run: `python3 {skill_dir}/scripts/transcribe_media.py <path>`, read transcript |
 | PDF (.pdf) | Use the Read tool directly on the file |
 | Image (.png/.jpg/.jpeg) | Use the Read tool to view, describe contents |
 | URL | Use WebFetch to retrieve and summarize content |
 
 Replace `{skill_dir}` with the actual directory path of this skill (the directory containing this SKILL.md file).
+
+**Audio/Video notes:**
+- Transcription uses faster-whisper, auto-detects language (supports Chinese and English)
+- For long recordings (>10min), the transcript may be large — focus on extracting key requirements, pain points, and user quotes
+- For meeting recordings with multiple speakers, note that speaker separation is not available — treat the transcript as a single stream and ask user to clarify who said what if ambiguous
+- If transcription fails (corrupted file, unsupported codec), inform user and ask them to provide a text summary instead
 
 ### Post-Extraction Protocol
 
