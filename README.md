@@ -15,7 +15,6 @@
 |------|------|----------|
 | Claude Code | ✅ | `npx skills add NicZhang/product-manager-skill` |
 | Codex (OpenAI CLI) | ✅ | `codex install NicZhang/product-manager-skill` |
-| CodeBuddy (腾讯) | 🚧 计划中 | — |
 
 ## 安装
 
