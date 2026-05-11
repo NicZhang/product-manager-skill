@@ -1,0 +1,35 @@
+{
+  "name": "product-manager-skill",
+  "description": "资深产品经理 skill，通过结构化对话引导梳理产品需求，输出标准PRD文档",
+  "version": "1.0.0",
+  "author": {
+    "name": "NicZhang",
+    "url": "https://github.com/NicZhang"
+  },
+  "commands": [
+    "./commands/product-manager.md"
+  ],
+  "homepage": "https://github.com/NicZhang/product-manager-skill",
+  "repository": "https://github.com/NicZhang/product-manager-skill",
+  "license": "MIT",
+  "keywords": ["product-manager", "prd", "requirements", "需求分析"],
+  "interface": {
+    "displayName": "Product Manager",
+    "shortDescription": "通过结构化对话引导梳理产品需求，输出标准PRD文档",
+    "longDescription": "资深产品经理 skill，通过结构化对话引导一线业务人员梳理产品需求，输出标准PRD文档。支持引导模式、倾倒模式和审查模式，可处理Word/Excel/PPT/PDF/录音/录屏等素材。",
+    "developerName": "NicZhang",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "帮我梳理一个产品需求",
+      "我想做一个新功能，帮我写PRD"
+    ],
+    "brandColor": "#6366F1",
+    "logo": "",
+    "screenshots": []
+  }
+}
