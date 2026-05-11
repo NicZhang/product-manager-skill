@@ -9,16 +9,38 @@
 - 支持多种素材输入（Word/Excel/PPT/PDF/图片/URL/录音/录屏）
 - 最终输出标准化的产品需求文档（PRD）
 
+## 兼容平台
+
+| 平台 | 支持 | 安装方式 |
+|------|------|----------|
+| Claude Code | ✅ | `npx skills add NicZhang/product-manager-skill` |
+| Codex (OpenAI CLI) | ✅ | `codex install NicZhang/product-manager-skill` |
+| CodeBuddy (腾讯) | 🚧 计划中 | — |
+
 ## 安装
+
+### Claude Code
 
 ```bash
 npx skills add NicZhang/product-manager-skill
 ```
 
-或手动将本仓库克隆到 `.claude/skills/` 目录下：
+或手动克隆：
 
 ```bash
 git clone https://github.com/NicZhang/product-manager-skill.git ~/.claude/skills/product-manager-skill
+```
+
+### Codex
+
+```bash
+codex install NicZhang/product-manager-skill
+```
+
+或手动克隆：
+
+```bash
+git clone https://github.com/NicZhang/product-manager-skill.git ~/.codex/plugins/product-manager-skill
 ```
 
 ### 依赖安装
@@ -26,14 +48,14 @@ git clone https://github.com/NicZhang/product-manager-skill.git ~/.claude/skills
 音视频转录功能需要安装 Python 依赖：
 
 ```bash
-pip install -r ~/.claude/skills/product-manager-skill/scripts/requirements.txt
+pip install -r scripts/requirements.txt
 ```
 
 同时需要系统安装 [ffmpeg](https://ffmpeg.org/)（音视频转录需要）。
 
 ## 使用
 
-在 Claude Code 中直接说：
+在 Claude Code 或 Codex 中直接说：
 
 ```
 帮我梳理一个需求
@@ -86,7 +108,14 @@ Phase 4: 生成PRD → 质量自检 → 交付
 
 ```
 product-manager-skill/
-├── SKILL.md                  # 主入口：引导协议 + 工作流 + PM判断逻辑
+├── .claude-plugin/           # Claude Code 插件入口
+│   ├── plugin.json
+│   └── marketplace.json
+├── .codex-plugin/            # Codex 插件入口
+│   └── plugin.json
+├── commands/
+│   └── product-manager.md    # 命令入口（引用 SKILL.md）
+├── SKILL.md                  # 主逻辑：引导协议 + 工作流 + PM判断逻辑
 ├── references/
 │   ├── question-bank.md      # 各阶段问题库（含追问策略）
 │   └── prd-template.md       # PRD输出模板
